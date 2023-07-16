@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        JAR_NAME = 'my-spring-app'
+        JAR_NAME = 'editorial-0.0.1-SNAPSHOT'
     }
     
     stages {
