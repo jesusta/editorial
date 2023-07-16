@@ -26,7 +26,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sh "nohup java -jar target/${env.JAR_NAME}.jar > myapp.log 2>&1 &"
+                sh "nohup java -jar target/${env.JAR_NAME}.jar > myapp.log 2>&1 & disown"
             }
         }
     }
