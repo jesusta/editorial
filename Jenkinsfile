@@ -14,13 +14,13 @@ pipeline {
 
         stage('Build2') {
             steps {
-                sh "./mvnw clean package -DfinalName=${env.JAR_NAME}"
+                sh "+x ./mvnw clean package -DfinalName=${env.JAR_NAME}"
             }
         }
 
         stage('Test') {
             steps {
-                sh './mvnw test'
+                sh '+x ./mvnw test'
             }
         }
 
