@@ -1,29 +1,29 @@
 pipeline {
     agent any
-
+    
     environment {
-        JAR_NAME = 'my-editorial-app'
+        JAR_NAME = 'my-spring-app'
     }
-
+    
     stages {
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
-
-        stage('Build2') {
+        
+        stage('Build') {
             steps {
-                sh "+x ./mvnw clean package -DfinalName=${env.JAR_NAME}"
+                sh "mvn clean package -DfinalName=${env.JAR_NAME}"
             }
         }
-
+        
         stage('Test') {
             steps {
-                sh '+x ./mvnw test'
+                sh 'mvn test'
             }
         }
-
+        
         stage('Deploy') {
             steps {
                 sh "java -jar target/${env.JAR_NAME}.jar"
