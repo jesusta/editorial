@@ -17,7 +17,7 @@ public class EditorialController {
     EditorialService editorialService;
     @PostMapping("/saludar")
     public String saludar(@RequestBody String bebe){
-        return "soy tu bebe "+bebe;
+        return "soy tu jajaja y tu eres yo  "+bebe;
     }
     @PostMapping("/saveEditorial")
     public EditorialEntity saveEditorial(@RequestBody EditorialEntity editorial){
