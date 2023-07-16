@@ -1,0 +1,9 @@
+server:
+ port: 1920
+spring:
+ datasource:
+  url: jdbc:mysql://mysql123prueba.mysql.database.azure.com/biblioteca?serverTimezone=America/Bogota
+  username: root123
+  password: Pruebas123
+ jpa:
+  show-sql: true
