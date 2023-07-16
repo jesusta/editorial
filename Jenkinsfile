@@ -29,13 +29,9 @@ pipeline {
                 sh "nohup java -jar target/${env.JAR_NAME}.jar > myapp.log 2>&1 &"
             }
         }
-        }
+    }
 
             post {
-                always {
-                    // Este bloque se ejecutará siempre, independientemente del resultado de la etapa 'Deploy'
-                    // Puedes agregar aquí cualquier limpieza o acciones adicionales que desees realizar
-                }
                 success {
                     // Este bloque se ejecutará solo si la etapa 'Deploy' es exitosa
                     echo "¡La etapa de despliegue fue exitosa!"
