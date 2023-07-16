@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:latest'
-            args '-v /root/.m2:/root/.m2' // Monta el directorio .m2 en el contenedor para compartir las dependencias descargadas
-        }
-    }
+    agent any
 
     environment {
         JAR_NAME = 'my-editorial-app'
@@ -19,13 +14,13 @@ pipeline {
 
         stage('Build2') {
             steps {
-                sh "mvn clean package -DfinalName=${env.JAR_NAME}"
+                sh "./mvnw clean package -DfinalName=${env.JAR_NAME}"
             }
         }
 
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh './mvnw test'
             }
         }
 
