@@ -29,6 +29,7 @@ pipeline {
                 sh "nohup java -jar target/${env.JAR_NAME}.jar > myapp.log 2>&1 &"
             }
         }
+        }
 
             post {
                 always {
@@ -46,5 +47,5 @@ pipeline {
                     // Puedes agregar aquí notificaciones, acciones de recuperación, etc.
                 }
             }
-    }
+
 }
