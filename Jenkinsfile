@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'maven:latest'
+            args '-v /root/.m2:/root/.m2' // Monta el directorio .m2 en el contenedor para compartir las dependencias descargadas
+        }
+    }
 
     environment {
         JAR_NAME = 'my-editorial-app'
